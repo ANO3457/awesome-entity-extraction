@@ -1,0 +1,5 @@
+# CPU-friendly install for the Hugging Face model pipeline.
+--extra-index-url https://download.pytorch.org/whl/cpu
+transformers==4.44.2
+torch==2.4.1
+sentencepiece==0.2.0

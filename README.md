@@ -42,6 +42,7 @@ around it.
 - [📊 Datasets and Benchmarks](#-datasets-and-benchmarks)
 - [🔗 Related Awesome Lists](#-related-awesome-lists)
 - [📚 Tutorials and Learning](#-tutorials-and-learning)
+- [Runnable Examples](#runnable-examples)
 
 ## 🧰 Libraries and Frameworks
 
@@ -251,6 +252,15 @@ Score your extractor and inspect its output.
 ## 📚 Tutorials and Learning
 
 - [Transformers Tutorials](https://github.com/NielsRogge/Transformers-Tutorials) - Hands-on notebooks including token classification / NER with Transformers.
+
+## Runnable Examples
+
+Ten independent, end-to-end demos cover general and zero-shot NER, structured
+LLM extraction, PII redaction, relation triples, PDF invoice fields, multilingual
+NER, temporal/quantity parsing, biomedical entities, and entity linking. Each
+example has its own setup guide and dependencies.
+
+See the [examples index](examples/README.md) to choose a use case and run it.
 
 ## Contributing
 
