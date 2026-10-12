@@ -63,9 +63,7 @@ General-purpose NLP toolkits with strong, production-grade NER components.
 - [Flair](https://github.com/flairNLP/flair) - Simple framework with state-of-the-art sequence taggers and contextual string embeddings.
 - [Stanza](https://github.com/stanfordnlp/stanza) - Stanford NLP's neural pipeline with NER for 60+ languages.
 - [Stanford CoreNLP](https://github.com/stanfordnlp/CoreNLP) - The long-standing Java NLP suite with rule-based and statistical NER.
-- [HanLP](https://github.com/hankcs/HanLP) - Multilingual NLP toolkit with strong NER, especially for Chinese.
 - [Spark NLP](https://github.com/JohnSnowLabs/spark-nlp) - Scalable NLP for Apache Spark with a large catalog of pretrained NER models.
-- [PaddleNLP](https://github.com/PaddlePaddle/PaddleNLP) - Broad NLP library with information-extraction (UIE) pipelines.
 - [NLTK](https://github.com/nltk/nltk) - The classic Python NLP toolkit; useful for chunking-based entity extraction and teaching.
 - [nlp.js](https://github.com/axa-group/nlp.js) - NLP library for Node.js with built-in entity extraction.
 
@@ -129,7 +127,6 @@ entity types, language, and size.
 - [🤗 UniNER-7B-all](https://huggingface.co/Universal-NER/UniNER-7B-all) - UniversalNER 7B instruction model for open-domain zero-shot NER.
 - [🤗 GoLLIE-7B](https://huggingface.co/HiTZ/GoLLIE-7B) - Guideline-following extraction model based on Code-LLaMA.
 - [🤗 NuExtract 1.5](https://huggingface.co/numind/NuExtract-1.5) - Small, fine-tunable model for template-based structured extraction.
-- [🤗 NuExtract 2.0 8B](https://huggingface.co/numind/NuExtract-2.0-8B) - Larger NuExtract for higher-accuracy structured extraction.
 - [🤗 NuNER Zero](https://huggingface.co/numind/NuNER_Zero) - Compact zero-shot token-classification NER model.
 - [🤗 bert-base-NER](https://huggingface.co/dslim/bert-base-NER) - Classic, reliable English NER baseline (CoNLL-03 types).
 - [🤗 bert-large-NER](https://huggingface.co/dslim/bert-large-NER) - Larger variant of the classic English NER baseline.
