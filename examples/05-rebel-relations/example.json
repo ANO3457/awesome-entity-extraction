@@ -1,0 +1,23 @@
+{
+  "id": "05-rebel-relations",
+  "title": "Relation triples",
+  "summary": "Subject–relation–object extraction; large model download",
+  "task": "Relation extraction",
+  "stack": "REBEL",
+  "input_type": "plain_text",
+  "languages": [
+    "en"
+  ],
+  "runs_locally": true,
+  "needs_api_key": false,
+  "needs_gpu": false,
+  "downloads_model": true,
+  "needs_network": false,
+  "models": [
+    {
+      "name": "Babelscape/rebel-large",
+      "publisher": "Babelscape",
+      "license": "CC-BY-NC-SA-4.0"
+    }
+  ]
+}

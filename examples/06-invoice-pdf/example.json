@@ -1,0 +1,17 @@
+{
+  "id": "06-invoice-pdf",
+  "title": "Invoice fields",
+  "summary": "Generate and parse a synthetic text PDF; no OCR",
+  "task": "Document field extraction",
+  "stack": "pdfplumber",
+  "input_type": "text_pdf",
+  "languages": [
+    "en"
+  ],
+  "runs_locally": true,
+  "needs_api_key": false,
+  "needs_gpu": false,
+  "downloads_model": false,
+  "needs_network": false,
+  "models": []
+}

@@ -1,22 +1,27 @@
 # Runnable Examples
 
-Ten independent, end-to-end entity-extraction examples. Each directory has its
-own `README.md`, `main.py`, and pinned `requirements.txt`; no example imports
-another. Start with the use-case index below, then follow that directory's setup
-instructions. These are small teaching demos, not production-ready extractors.
+Independent, end-to-end entity-extraction examples. Each directory has its
+own `README.md`, `main.py`, pinned `requirements.txt`, and `example.json`
+metadata; no example imports another. Pick a use case from the table (generated
+from the `example.json` files), then follow that directory's setup instructions.
+These are small teaching demos, not production-ready extractors.
 
-| # | Example | Use case | What it demonstrates |
-|---|---------|----------|----------------------|
-| 1 | [General NER](01-spacy-ner/README.md) | spaCy | People, organizations, locations, dates, and source offsets |
-| 2 | [Zero-shot custom NER](02-gliner-zero-shot/README.md) | GLiNER | Caller-defined entity labels and grounded spans |
-| 3 | [Typed structured extraction](03-instructor-structured/README.md) | Instructor + OpenAI API | Validated business fields from free text; API key and possible charges |
-| 4 | [PII redaction](04-presidio-pii/README.md) | Presidio | Detect and redact synthetic contact details |
-| 5 | [Relation triples](05-rebel-relations/README.md) | REBEL | Subject–relation–object extraction; large model download |
-| 6 | [Invoice fields](06-invoice-pdf/README.md) | pdfplumber | Generate and parse a synthetic text PDF; no OCR |
-| 7 | [Multilingual NER](07-stanza-multilingual/README.md) | Stanza | English, Spanish, and French entity recognition |
-| 8 | [Dates and quantities](08-temporal-quantity/README.md) | dateparser + quantulum3 | Normalize a relative date and extract measurements |
-| 9 | [Biomedical entities](09-scispacy-biomedical/README.md) | scispaCy | Extract disease/chemical mentions from synthetic text |
-| 10 | [Entity linking](10-wikidata-linking/README.md) | Wikidata API | Resolve a contextual mention to canonical knowledge-base candidates |
+<!-- BEGIN GENERATED EXAMPLES INDEX: edit example.json files, then run scripts/check-examples.py --write -->
+
+| # | Example | Stack | What it demonstrates | Needs |
+|---|---------|-------|----------------------|-------|
+| 1 | [General NER](01-spacy-ner/README.md) | spaCy | People, organizations, locations, dates, and source offsets | model download |
+| 2 | [Zero-shot custom NER](02-gliner-zero-shot/README.md) | GLiNER | Caller-defined entity labels and grounded spans | model download |
+| 3 | [Typed structured extraction](03-instructor-structured/README.md) | Instructor + OpenAI API | Validated business fields from free text; API key and possible charges | API key, network |
+| 4 | [PII redaction](04-presidio-pii/README.md) | Presidio | Detect and redact synthetic contact details | model download |
+| 5 | [Relation triples](05-rebel-relations/README.md) | REBEL | Subject–relation–object extraction; large model download | model download |
+| 6 | [Invoice fields](06-invoice-pdf/README.md) | pdfplumber | Generate and parse a synthetic text PDF; no OCR | none |
+| 7 | [Multilingual NER](07-stanza-multilingual/README.md) | Stanza | English, Spanish, and French entity recognition | model download |
+| 8 | [Dates and quantities](08-temporal-quantity/README.md) | dateparser + quantulum3 | Normalize a relative date and extract measurements | none |
+| 9 | [Biomedical entities](09-scispacy-biomedical/README.md) | scispaCy | Extract disease/chemical mentions from synthetic text | model download |
+| 10 | [Entity linking](10-wikidata-linking/README.md) | Wikidata API | Resolve a contextual mention to canonical knowledge-base candidates | network |
+
+<!-- END GENERATED EXAMPLES INDEX -->
 
 See the [Extraction Field Guide](../field_guide/README.md) for a constraint-based
 shortlist and two versioned, synthetic task cards. Its current task-card status

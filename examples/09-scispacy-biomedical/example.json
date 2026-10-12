@@ -1,0 +1,23 @@
+{
+  "id": "09-scispacy-biomedical",
+  "title": "Biomedical entities",
+  "summary": "Extract disease/chemical mentions from synthetic text",
+  "task": "Biomedical NER",
+  "stack": "scispaCy",
+  "input_type": "plain_text",
+  "languages": [
+    "en"
+  ],
+  "runs_locally": true,
+  "needs_api_key": false,
+  "needs_gpu": false,
+  "downloads_model": true,
+  "needs_network": false,
+  "models": [
+    {
+      "name": "en_ner_bc5cdr_md",
+      "publisher": "Allen Institute for AI",
+      "license": "unverified"
+    }
+  ]
+}

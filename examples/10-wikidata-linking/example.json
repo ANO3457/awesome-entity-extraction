@@ -1,0 +1,17 @@
+{
+  "id": "10-wikidata-linking",
+  "title": "Entity linking",
+  "summary": "Resolve a contextual mention to canonical knowledge-base candidates",
+  "task": "Entity linking",
+  "stack": "Wikidata API",
+  "input_type": "plain_text",
+  "languages": [
+    "en"
+  ],
+  "runs_locally": false,
+  "needs_api_key": false,
+  "needs_gpu": false,
+  "downloads_model": false,
+  "needs_network": true,
+  "models": []
+}

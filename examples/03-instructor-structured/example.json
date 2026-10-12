@@ -1,0 +1,23 @@
+{
+  "id": "03-instructor-structured",
+  "title": "Typed structured extraction",
+  "summary": "Validated business fields from free text; API key and possible charges",
+  "task": "Structured field extraction",
+  "stack": "Instructor + OpenAI API",
+  "input_type": "plain_text",
+  "languages": [
+    "en"
+  ],
+  "runs_locally": false,
+  "needs_api_key": true,
+  "needs_gpu": false,
+  "downloads_model": false,
+  "needs_network": true,
+  "models": [
+    {
+      "name": "gpt-4o-mini (configurable)",
+      "publisher": "OpenAI",
+      "license": "Proprietary API"
+    }
+  ]
+}

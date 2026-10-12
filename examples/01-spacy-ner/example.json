@@ -1,0 +1,23 @@
+{
+  "id": "01-spacy-ner",
+  "title": "General NER",
+  "summary": "People, organizations, locations, dates, and source offsets",
+  "task": "General-purpose NER",
+  "stack": "spaCy",
+  "input_type": "plain_text",
+  "languages": [
+    "en"
+  ],
+  "runs_locally": true,
+  "needs_api_key": false,
+  "needs_gpu": false,
+  "downloads_model": true,
+  "needs_network": false,
+  "models": [
+    {
+      "name": "en_core_web_sm",
+      "publisher": "Explosion",
+      "license": "MIT"
+    }
+  ]
+}

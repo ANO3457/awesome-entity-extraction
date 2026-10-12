@@ -1,0 +1,24 @@
+{
+  "id": "02-gliner-zero-shot",
+  "title": "Zero-shot custom NER",
+  "summary": "Caller-defined entity labels and grounded spans",
+  "task": "Custom-label NER",
+  "stack": "GLiNER",
+  "input_type": "plain_text",
+  "languages": [
+    "en",
+    "multilingual"
+  ],
+  "runs_locally": true,
+  "needs_api_key": false,
+  "needs_gpu": false,
+  "downloads_model": true,
+  "needs_network": false,
+  "models": [
+    {
+      "name": "urchade/gliner_multi-v2.1",
+      "publisher": "urchade (GLiNER authors)",
+      "license": "Apache-2.0"
+    }
+  ]
+}

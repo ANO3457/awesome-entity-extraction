@@ -1,0 +1,25 @@
+{
+  "id": "07-stanza-multilingual",
+  "title": "Multilingual NER",
+  "summary": "English, Spanish, and French entity recognition",
+  "task": "Multilingual NER",
+  "stack": "Stanza",
+  "input_type": "plain_text",
+  "languages": [
+    "en",
+    "es",
+    "fr"
+  ],
+  "runs_locally": true,
+  "needs_api_key": false,
+  "needs_gpu": false,
+  "downloads_model": true,
+  "needs_network": false,
+  "models": [
+    {
+      "name": "Stanza en/es/fr tokenize+ner",
+      "publisher": "Stanford NLP",
+      "license": "Apache-2.0"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "08-temporal-quantity",
+  "title": "Dates and quantities",
+  "summary": "Normalize a relative date and extract measurements",
+  "task": "Temporal and quantity normalization",
+  "stack": "dateparser + quantulum3",
+  "input_type": "plain_text",
+  "languages": [
+    "en"
+  ],
+  "runs_locally": true,
+  "needs_api_key": false,
+  "needs_gpu": false,
+  "downloads_model": false,
+  "needs_network": false,
+  "models": []
+}

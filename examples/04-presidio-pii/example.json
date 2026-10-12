@@ -1,0 +1,23 @@
+{
+  "id": "04-presidio-pii",
+  "title": "PII redaction",
+  "summary": "Detect and redact synthetic contact details",
+  "task": "PII detection and redaction",
+  "stack": "Presidio",
+  "input_type": "plain_text",
+  "languages": [
+    "en"
+  ],
+  "runs_locally": true,
+  "needs_api_key": false,
+  "needs_gpu": false,
+  "downloads_model": true,
+  "needs_network": false,
+  "models": [
+    {
+      "name": "en_core_web_lg",
+      "publisher": "Explosion",
+      "license": "MIT"
+    }
+  ]
+}
