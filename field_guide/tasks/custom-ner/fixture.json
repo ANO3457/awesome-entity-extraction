@@ -1,6 +1,7 @@
 {
   "version": "1.0.0",
   "task": "custom-ner-short-text",
+  "metric": "spans",
   "offset_unit": "unicode_codepoint",
   "offset_convention": "half_open",
   "labels": ["PERSON", "ORG", "GPE", "PRODUCT"],

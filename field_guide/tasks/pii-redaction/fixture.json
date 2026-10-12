@@ -1,6 +1,7 @@
 {
   "version": "1.0.0",
   "task": "synthetic-pii-redaction-short-text",
+  "metric": "pii_residual",
   "examples": [
     {
       "id": "contact-001",
