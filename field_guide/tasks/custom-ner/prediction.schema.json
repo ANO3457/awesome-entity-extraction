@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Custom NER recorded predictions",
+  "type": "object",
+  "required": ["run", "examples"],
+  "properties": {
+    "run": {"type": "object", "required": ["tool", "version", "fixture_version", "run_date_utc", "environment", "status", "command", "git_commit", "network_or_api"], "properties": {
+      "tool": {"type": "string"},
+      "version": {"type": "string"},
+      "model": {"type": ["string", "null"]},
+      "fixture_version": {"const": "1.0.0"},
+      "run_date_utc": {"type": "string"},
+      "environment": {"type": "string"},
+      "command": {"type": "string"},
+      "git_commit": {"type": "string"},
+      "network_or_api": {"type": "boolean"},
+      "status": {"enum": ["passed", "failed", "partial"]},
+      "notes": {"type": "string"}
+    }},
+    "examples": {"type": "array", "items": {
+      "type": "object", "required": ["id", "entities"], "properties": {
+        "id": {"type": "string"},
+        "entities": {"type": "array", "items": {
+          "type": "object", "required": ["text", "label", "start", "end"], "properties": {
+            "text": {"type": "string"},
+            "label": {"type": "string"},
+            "start": {"type": "integer", "minimum": 0},
+            "end": {"type": "integer", "minimum": 1}
+          }}
+        }
+      }
+    }}
+  }
+}

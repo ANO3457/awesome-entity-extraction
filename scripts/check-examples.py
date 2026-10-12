@@ -6,6 +6,7 @@ verify model quality. Run from the repository root: python3 scripts/check-exampl
 """
 from pathlib import Path
 import ast
+import json
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -52,6 +53,28 @@ def main() -> int:
         for name in sorted(EXPECTED):
             if f"{name}/README.md" not in text:
                 errors.append(f"examples index does not link to {name}/README.md")
+
+    field_guide = ROOT / "field_guide"
+    required_guide = [
+        "README.md", "decision_matrix.json", "tasks/index.json",
+        "tasks/custom-ner/README.md", "tasks/custom-ner/fixture.json",
+        "tasks/custom-ner/annotation.md", "tasks/custom-ner/prediction.schema.json",
+        "tasks/pii-redaction/README.md", "tasks/pii-redaction/fixture.json",
+        "tasks/pii-redaction/annotation.md", "tasks/pii-redaction/prediction.schema.json",
+        "results/report.json",
+    ]
+    for relative in required_guide:
+        if not (field_guide / relative).is_file():
+            errors.append(f"field guide is missing {relative}")
+    for json_path in field_guide.rglob("*.json"):
+        try:
+            json.loads(json_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"invalid JSON {json_path.relative_to(ROOT)}: {exc}")
+
+    chooser = ROOT / "README.md"
+    if chooser.exists() and "field_guide/README.md" not in chooser.read_text(encoding="utf-8"):
+        errors.append("main README does not link to the Extraction Field Guide")
     if errors:
         print("Example checks failed:")
         print("\n".join(f"- {error}" for error in errors))

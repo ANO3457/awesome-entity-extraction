@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "task": "synthetic-pii-redaction-short-text",
+  "examples": [
+    {
+      "id": "contact-001",
+      "text": "Email Alex Doe at alex.doe@example.test or call +1 202-555-0143.",
+      "expected_types": ["PERSON", "EMAIL_ADDRESS", "PHONE_NUMBER"],
+      "sensitive_values": ["Alex Doe", "alex.doe@example.test", "+1 202-555-0143"]
+    },
+    {
+      "id": "unicode-002",
+      "text": "Contact Zoë Example: zoe@example.test.",
+      "expected_types": ["PERSON", "EMAIL_ADDRESS"],
+      "sensitive_values": ["Zoë Example", "zoe@example.test"]
+    },
+    {
+      "id": "repeat-003",
+      "text": "Write to repeat@example.test; again, repeat@example.test.",
+      "expected_types": ["EMAIL_ADDRESS"],
+      "sensitive_values": ["repeat@example.test"]
+    },
+    {
+      "id": "digits-negative-004",
+      "text": "The package has 14 items and weighs 500 grams.",
+      "expected_types": [],
+      "sensitive_values": []
+    },
+    {
+      "id": "ambiguous-005",
+      "text": "Please call me after lunch; my local extension is 2048.",
+      "expected_types": [],
+      "sensitive_values": []
+    },
+    {
+      "id": "empty-006",
+      "text": "The delivery arrived this morning.",
+      "expected_types": [],
+      "sensitive_values": []
+    }
+  ]
+}

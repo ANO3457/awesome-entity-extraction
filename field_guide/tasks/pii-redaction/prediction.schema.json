@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PII redaction recorded predictions",
+  "type": "object",
+  "required": ["run", "examples"],
+  "properties": {
+    "run": {"type": "object", "required": ["tool", "version", "fixture_version", "run_date_utc", "environment", "status", "command", "git_commit", "network_or_api"], "properties": {
+      "tool": {"type": "string"},
+      "version": {"type": "string"},
+      "model": {"type": ["string", "null"]},
+      "fixture_version": {"const": "1.0.0"},
+      "run_date_utc": {"type": "string"},
+      "environment": {"type": "string"},
+      "command": {"type": "string"},
+      "git_commit": {"type": "string"},
+      "network_or_api": {"type": "boolean"},
+      "status": {"enum": ["passed", "failed", "partial"]},
+      "notes": {"type": "string"}
+    }},
+    "examples": {"type": "array", "items": {
+      "type": "object", "required": ["id", "redacted_text", "detected_types"], "properties": {
+        "id": {"type": "string"},
+        "redacted_text": {"type": "string"},
+        "detected_types": {"type": "array", "items": {"type": "string"}}
+      }
+    }}
+  }
+}

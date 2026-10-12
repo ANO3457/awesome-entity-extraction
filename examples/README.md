@@ -18,11 +18,17 @@ instructions. These are small teaching demos, not production-ready extractors.
 | 9 | [Biomedical entities](09-scispacy-biomedical/README.md) | scispaCy | Extract disease/chemical mentions from synthetic text |
 | 10 | [Entity linking](10-wikidata-linking/README.md) | Wikidata API | Resolve a contextual mention to canonical knowledge-base candidates |
 
+See the [Extraction Field Guide](../field_guide/README.md) for a constraint-based
+shortlist and two versioned, synthetic task cards. Its current task-card status
+is explicitly `not_run`; it does not publish model scores until outputs are
+reproducibly recorded.
+
 See a gap? [Suggest an example](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new?template=example_idea.md), [report stale information](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new/choose), or [contribute directly](../CONTRIBUTING.md). First-time contributors are welcome.
 
 ## Run one example
 
 Choose a directory and follow its `README.md`; for example:
+
 ```bash
 cd examples/06-invoice-pdf
 uv venv --python 3.12 .venv

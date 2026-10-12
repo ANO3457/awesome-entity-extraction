@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "method": "Editorial shortlist from catalog capabilities and repository examples; not a benchmark ranking.",
+  "scenarios": [
+    {
+      "id": "common-english-ner",
+      "task": "Common English people, organizations, and places",
+      "constraints": {"input": "plain text", "language": "English", "local": true, "api_key": false, "custom_schema": false},
+      "start_with": ["spaCy en_core_web_sm"],
+      "why": "Small local baseline with common pretrained English entity labels.",
+      "alternatives": ["GLiNER when caller-defined types are needed"],
+      "disqualifiers": ["Must recognize arbitrary domain labels without training or prompt-defined inference"],
+      "unknowns": ["Real-domain recall depends on corpus and model version"],
+      "example": "examples/01-spacy-ner/README.md"
+    },
+    {
+      "id": "custom-label-ner",
+      "task": "Custom labels without task-specific training",
+      "constraints": {"input": "plain text", "language": "English or model-supported multilingual text", "local": true, "api_key": false, "custom_schema": true},
+      "start_with": ["GLiNER multi v2.1"],
+      "why": "Supply entity labels at inference time without preparing a task-specific training set.",
+      "alternatives": ["Instructor for fixed structured fields with hosted API", "Fine-tuned token classifier for stable schema and labeled data"],
+      "disqualifiers": ["No model download allowed", "Scores must be calibrated probabilities"],
+      "unknowns": ["Task accuracy, memory, and latency need measurement on target hardware"],
+      "example": "examples/02-gliner-zero-shot/README.md"
+    },
+    {
+      "id": "local-pii-redaction",
+      "task": "Detect and redact common PII locally",
+      "constraints": {"input": "plain text", "language": "English", "local": true, "api_key": false, "privacy_sensitive": true},
+      "start_with": ["Presidio with configured local recognizers"],
+      "why": "Composable local analyzer and anonymizer pipeline.",
+      "alternatives": ["Rule recognizers for known identifier formats", "Domain-specific local NER if evaluated for the target text"],
+      "disqualifiers": ["Requires a guarantee that no PII can remain"],
+      "unknowns": ["Recall and false-redaction rates on representative, approved test data"],
+      "example": "examples/04-presidio-pii/README.md"
+    },
+    {
+      "id": "messy-text-fixed-schema",
+      "task": "Typed fields from messy short text",
+      "constraints": {"input": "plain text", "schema": "fixed fields", "local": false, "api_key": true, "possible_charge": true},
+      "start_with": ["Instructor + Pydantic with an approved provider/model"],
+      "why": "Makes output schema explicit and validates returned shape.",
+      "alternatives": ["Local constrained-generation model if data locality requires it", "Rules for stable, strongly formatted text"],
+      "disqualifiers": ["Cannot send the input to an external service", "Cannot hold API credentials"],
+      "unknowns": ["Factual extraction quality, provider data handling, and per-run cost"],
+      "example": "examples/03-instructor-structured/README.md"
+    },
+    {
+      "id": "known-layout-text-pdf",
+      "task": "Fields from selectable-text PDF with stable layout",
+      "constraints": {"input": "text PDF", "local": true, "ocr_required": false},
+      "start_with": ["pdfplumber plus explicit parsing/normalization rules"],
+      "why": "Simple local path for extractable text and constrained layouts.",
+      "alternatives": ["Docling or another catalogued document parser for varied structures"],
+      "disqualifiers": ["PDF is image-only or layout varies substantially"],
+      "unknowns": ["Generalization across vendors, scans, tables, and rotations"],
+      "example": "examples/06-invoice-pdf/README.md"
+    },
+    {
+      "id": "scanned-layout-heavy-documents",
+      "task": "Scanned or layout-heavy documents, tables, OCR",
+      "constraints": {"input": "scanned PDF/image", "local": "varies", "ocr_required": true},
+      "start_with": ["Docling", "Marker", "Unstructured", "Surya"],
+      "why": "These catalog entries address document parsing, OCR, layout, or reading order.",
+      "alternatives": ["Cloud document extraction service where policy permits"],
+      "disqualifiers": ["No OCR or model downloads permitted without an approved cloud alternative"],
+      "unknowns": ["Language/layout accuracy, compute, license, and table fidelity for the specific corpus"],
+      "example": "../README.md#-document-and-layout-extraction"
+    }
+  ]
+}

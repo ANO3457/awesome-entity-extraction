@@ -26,7 +26,7 @@ welcome; no issue or permission is needed before opening a PR. [Suggest a resour
 [propose an example](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new?template=example_idea.md),
 [open a PR](https://github.com/shivamnegi92/awesome-entity-extraction/compare),
 or read [CONTRIBUTING.md](CONTRIBUTING.md). Good first tasks: fix a dead link,
-add a useful missing tool, or improve an example quickstart.
+add a useful missing tool, or improve an example quickstart. [See the growth plan](GROWTH_PLAN.md) for how to help make the repo a decision guide, not just a list.
 
 **Not sure where to start?** This picks a tool from your constraints:
 
@@ -51,6 +51,7 @@ add a useful missing tool, or improve an example quickstart.
 - [🔗 Related Awesome Lists](#-related-awesome-lists)
 - [📚 Tutorials and Learning](#-tutorials-and-learning)
 - [Runnable Examples](#runnable-examples)
+- [Extraction Field Guide](#extraction-field-guide)
 
 ## 🧰 Libraries and Frameworks
 
@@ -269,6 +270,14 @@ NER, temporal/quantity parsing, biomedical entities, and entity linking. Each
 example has its own setup guide and dependencies.
 
 See the [examples index](examples/README.md) to choose a use case and run it.
+
+## Extraction Field Guide
+
+Need a shortlist rather than another taxonomy? Read the [Field Guide](field_guide/README.md)
+for a task-and-constraint shortlist and links to isolated runnable examples and two
+small synthetic task cards. The [static chooser](field_guide/site/index.html) works
+without a backend. The cards are currently **not run**—no model scores are claimed
+until outputs are reproduced and reviewed.
 
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](LICENSE)
 

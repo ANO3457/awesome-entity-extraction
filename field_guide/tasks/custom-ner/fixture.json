@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "task": "custom-ner-short-text",
+  "offset_unit": "unicode_codepoint",
+  "offset_convention": "half_open",
+  "labels": ["PERSON", "ORG", "GPE", "PRODUCT"],
+  "examples": [
+    {
+      "id": "news-001",
+      "text": "Maya Chen joined Northstar Labs in Toronto.",
+      "entities": [
+        {"text": "Maya Chen", "label": "PERSON", "start": 0, "end": 9},
+        {"text": "Northstar Labs", "label": "ORG", "start": 17, "end": 31},
+        {"text": "Toronto", "label": "GPE", "start": 35, "end": 42}
+      ]
+    },
+    {
+      "id": "product-002",
+      "text": "Aster Phone 4 launches in Dublin next week.",
+      "entities": [
+        {"text": "Aster Phone 4", "label": "PRODUCT", "start": 0, "end": 13},
+        {"text": "Dublin", "label": "GPE", "start": 26, "end": 32}
+      ]
+    },
+    {
+      "id": "negative-003",
+      "text": "The apple fell beside the river.",
+      "entities": []
+    },
+    {
+      "id": "unicode-004",
+      "text": "Zoë opened Café North in Montréal.",
+      "entities": [
+        {"text": "Zoë", "label": "PERSON", "start": 0, "end": 3},
+        {"text": "Café North", "label": "ORG", "start": 11, "end": 21},
+        {"text": "Montréal", "label": "GPE", "start": 25, "end": 33}
+      ]
+    },
+    {
+      "id": "abbrev-005",
+      "text": "J. Rivera spoke at U.N. House in Geneva.",
+      "entities": [
+        {"text": "J. Rivera", "label": "PERSON", "start": 0, "end": 9},
+        {"text": "U.N. House", "label": "ORG", "start": 19, "end": 29},
+        {"text": "Geneva", "label": "GPE", "start": 33, "end": 39}
+      ]
+    },
+    {
+      "id": "empty-006",
+      "text": "The shipment arrived yesterday.",
+      "entities": []
+    }
+  ]
+}
