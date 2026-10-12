@@ -23,7 +23,8 @@ shortlist and two versioned, synthetic task cards. Its current task-card status
 is explicitly `not_run`; it does not publish model scores until outputs are
 reproducibly recorded.
 
-See a gap? [Suggest an example](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new?template=example_idea.md), [report stale information](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new/choose), or [contribute directly](../CONTRIBUTING.md). First-time contributors are welcome.
+Want to help make the examples better? Pick a [good first issue](https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue), propose a [new task card](https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Atask-card), or improve one of these examples. A starter PR does not need a prior issue.
+
 
 ## Run one example
 

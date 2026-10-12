@@ -9,6 +9,9 @@ resource, or contribute a standalone example. No need to ask permission first.
 [propose an example](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new?template=example_idea.md),
 or [open a pull request](https://github.com/shivamnegi92/awesome-entity-extraction/compare).
 
+
+**Live contributor tasks:** see the [open-source roadmap](OPEN_SOURCE_ROADMAP.md), [good first issues](https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue), and [Field Guide tasks](https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Atask-card). You may open a focused PR directly; the issue is optional.
+
 ## What belongs here
 
 This is a practitioner-first map of maintained tools, models, datasets, and

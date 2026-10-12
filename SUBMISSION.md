@@ -1,17 +1,19 @@
 # Submitting to sindresorhus/awesome
 
 Getting listed on the main [Awesome](https://github.com/sindresorhus/awesome)
-index is the single biggest discovery driver for a list like this. This repo is
-already prepared for it. Here's the exact playbook.
+index is one discovery channel, not a substitute for user value or community
+building. Keep submission readiness current; do not claim a time window or entry
+count without checking the live repository and Awesome guidelines.
 
-## Status: ready, pending the 30-day rule
+## Status: verify before submitting
 
-The Awesome guidelines require a list to **have existed for at least ~30 days**
-before submission. This repo was created today, so the submission is *staged*
-but should be opened after that window. Use the time to grow entries and
-gather a few stars/contributors (also looked at favorably).
 
-## Pre-flight checklist (all currently satisfied)
+## Pre-flight checklist
+
+Verify these against the current Awesome contribution guidance before opening a
+submission. The repository age and entry-count requirement can change; check
+rather than relying on this document as a live status report.
+
 
 - [x] Repo named `awesome-entity-extraction`
 - [x] Passes `npx awesome-lint` (also enforced in CI)
@@ -24,8 +26,10 @@ gather a few stars/contributors (also looked at favorably).
 - [x] `CONTRIBUTING.md`
 - [x] `CODE_OF_CONDUCT.md`
 - [x] GitHub repo description + topics set (including the `awesome` topic)
-- [ ] List is ~30 days old  <-- the only remaining gate
-- [ ] ~60+ quality entries (we are here; more is better)
+- [ ] Repo meets current age and list-size requirements
+- [ ] Submission entry/category rechecked against current `sindresorhus/awesome` README
+- [ ] Current CI checks pass
+- [ ] Rationale and contributor links are current
 
 ## How to submit (when the window opens)
 

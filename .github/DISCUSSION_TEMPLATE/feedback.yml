@@ -1,0 +1,40 @@
+title: Field Guide feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us about the extraction decision you are trying to make. Please use synthetic descriptions—do not share private/customer/health text, secrets, or credentials.
+  - type: dropdown
+    id: topic
+    attributes:
+      label: What are you discussing?
+      options:
+        - Choosing an extraction approach
+        - A Field Guide task card or result
+        - A missing use case or language
+        - Contributor experience
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: scenario
+    attributes:
+      label: What task and constraints do you have?
+      description: Mention input type, language, schema, local/cloud, hardware, and budget only as relevant.
+      placeholder: I need to extract ... from ... and must ...
+    validations:
+      required: true
+  - type: textarea
+    id: feedback
+    attributes:
+      label: What was useful, missing, or confusing?
+      placeholder: I expected ...; I found ...; I could not decide because ...
+    validations:
+      required: true
+  - type: checkboxes
+    id: safe-data
+    attributes:
+      label: Data safety
+      options:
+        - label: I have not included private text, personal/customer/health data, secrets, or credentials.
+          required: true

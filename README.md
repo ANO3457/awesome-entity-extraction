@@ -1,36 +1,35 @@
 # Awesome Entity Extraction [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-> A curated, **LLM-era** list of tools, models, libraries, and resources for
-> extracting entities, relations, and structured data from unstructured text.
+> A practitioner-first field guide to entity, relation, and structured-data
+> extraction: find a tool by task, run a standalone example, and understand
+> trade-offs before choosing.
 
 [![awesome-lint](https://github.com/shivamnegi92/awesome-entity-extraction/actions/workflows/awesome-lint.yml/badge.svg)](https://github.com/shivamnegi92/awesome-entity-extraction/actions/workflows/awesome-lint.yml)
 [![links](https://github.com/shivamnegi92/awesome-entity-extraction/actions/workflows/links.yml/badge.svg)](https://github.com/shivamnegi92/awesome-entity-extraction/actions/workflows/links.yml)
+[![examples](https://github.com/shivamnegi92/awesome-entity-extraction/actions/workflows/examples.yml/badge.svg)](https://github.com/shivamnegi92/awesome-entity-extraction/actions/workflows/examples.yml)
+[![field guide](https://github.com/shivamnegi92/awesome-entity-extraction/actions/workflows/pages.yml/badge.svg)](https://github.com/shivamnegi92/awesome-entity-extraction/actions/workflows/pages.yml)
 
 ![Entity extraction: text in, structured entities out](assets/demo.gif)
 
-Most "entity extraction" lists were written for the 2018 NLP world — CRFs,
-BiLSTMs, and paper dumps. The field has changed: zero-shot taggers, LLM
-structured outputs, and graph extraction now do in one prompt what used to take
-a labeled corpus and a training run. This list is **practitioner-first** and
-**kept current**: every entry links to a real, maintained project, and a CI job
-re-checks every link weekly.
+A curated map of maintained tools, models, libraries, datasets, and learning
+resources for extracting entities, relations, and structured data from text and
+documents. Includes ten isolated examples and an evidence-aware chooser.
 
-*Entity extraction* here covers the whole family: Named Entity Recognition
-(NER), relation/knowledge extraction, structured-data extraction from text and
-documents, entity linking, PII detection, and the annotation/eval tooling
-around it.
+**Start with a task:** use the Quick Start below, browse the catalog, or open the
+standalone example index. Recommendations are starting points—not endorsements
+or universal rankings. The Field Guide task cards are synthetic and currently
+**not run**; this repository does not claim benchmark results.
 
-**Help improve this resource:** suggest a missing tool, contribute a distinct
-standalone example, or report stale information. First-time contributors are
-welcome; no issue or permission is needed before opening a PR. [Suggest a resource](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new/choose),
-[propose an example](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new?template=example_idea.md),
-[open a PR](https://github.com/shivamnegi92/awesome-entity-extraction/compare),
-or read [CONTRIBUTING.md](CONTRIBUTING.md). Good first tasks: fix a dead link,
-add a useful missing tool, or improve an example quickstart. [See the growth plan](GROWTH_PLAN.md) for how to help make the repo a decision guide, not just a list.
+**Quick Start: choose by constraint**
 
-**Not sure where to start?** This picks a tool from your constraints:
+- **Common English person/company/place spans:** start with spaCy's small English model. Its label set is fixed; domain recall varies.
+- **Custom labels without task-specific training:** try GLiNER. It downloads a model; scores are not calibrated probabilities.
+- **Local PII detection/redaction:** try Presidio with configured local recognizers. Missed PII remains possible; this is not a compliance guarantee.
+- **Typed fields from messy text, hosted API allowed:** try Instructor with an approved provider. It needs credentials and may cost money; valid schema is not factual correctness.
+- **Selectable-text PDF with known layout:** try pdfplumber plus explicit rules. Scanned pages need OCR; layout rules require validation.
+- **Scanned/layout-heavy documents:** compare catalogued OCR/layout tools on representative documents; OCR errors propagate to extraction.
 
-![Which tool should I pick? A decision flowchart](assets/decision.gif)
+See the Field Guide and per-example READMEs for setup, caveats, and requirements.
 
 ## Contents
 
@@ -52,6 +51,8 @@ add a useful missing tool, or improve an example quickstart. [See the growth pla
 - [📚 Tutorials and Learning](#-tutorials-and-learning)
 - [Runnable Examples](#runnable-examples)
 - [Extraction Field Guide](#extraction-field-guide)
+- [Contribute](#contribute)
+- [Contributing history](#contributing-history)
 
 ## 🧰 Libraries and Frameworks
 
@@ -274,12 +275,21 @@ See the [examples index](examples/README.md) to choose a use case and run it.
 ## Extraction Field Guide
 
 Need a shortlist rather than another taxonomy? Read the [Field Guide](field_guide/README.md)
-for a task-and-constraint shortlist and links to isolated runnable examples and two
-small synthetic task cards. The [static chooser](field_guide/site/index.html) works
-without a backend. The cards are currently **not run**—no model scores are claimed
-until outputs are reproduced and reviewed.
+for task/constraint recommendations, two synthetic task cards, and clear run-status
+caveats. The [static chooser](field_guide/site/index.html) needs no backend. The
+task cards are currently `not_run`; no model scores are claimed.
 
-[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](LICENSE)
+## Contribute
+
+The [open-source roadmap](OPEN_SOURCE_ROADMAP.md) lists this month's scoped tasks: [good first issues](https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue), [task-card work](https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Atask-card), [resource suggestions](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new/choose), and [Discussions](https://github.com/shivamnegi92/awesome-entity-extraction/discussions). You may also [open a PR directly](https://github.com/shivamnegi92/awesome-entity-extraction/compare); issues are optional. See [CONTRIBUTING.md](CONTRIBUTING.md). Use synthetic or redistributable data only.
+
+## Contributing history
+
+See [CONTRIBUTION_HISTORY.md](CONTRIBUTION_HISTORY.md) for project milestones and
+community contributions.
+
+
+
 
 To the extent possible under law, the contributors have waived all copyright and
 related or neighboring rights to this work.

@@ -24,7 +24,15 @@ Recommendations are starting points, not endorsements or performance rankings.
 "No API key" does not mean "no model download"; validate whether downloaded
 weights, licensing, hardware, and processing location meet your requirements.
 
-The [static chooser](site/index.html) is generated with `python3 scripts/run_field_guide.py build`; it requires no service or client-side JavaScript.## Task cards
+The [static chooser](site/index.html) is generated with `python3 scripts/run_field_guide.py build`; it requires no service or client-side JavaScript.
+
+## Field Guide PRs
+
+Contribute a fixture edge case, a fair new adapter, a correction, or a new task
+card via a [good first issue](https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue),
+[task-card issue](https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Atask-card),
+or direct PR. Never submit real user text or personal, customer, or health data.
+
 
 - [Custom-label NER on short text](tasks/custom-ner/README.md) — fixture,
   annotation policy, strict/overlap span-type metrics, and explicit not-run status.

@@ -1,5 +1,11 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
+  - name: Open a pull request directly
+    url: https://github.com/shivamnegi92/awesome-entity-extraction/compare
+    about: Issues are optional. If you already know the change, send a focused PR.
+  - name: Browse current contribution tasks
+    url: https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue
+    about: Pick a scoped good-first-issue task, or propose a different one.
   - name: Contribution guide
     url: https://github.com/shivamnegi92/awesome-entity-extraction/blob/main/CONTRIBUTING.md
-    about: Review scope and contribution checks; direct pull requests are welcome.
+    about: Review scope, example requirements, privacy rules, and checks.
