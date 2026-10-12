@@ -1,1 +1,5 @@
 spacy==3.8.7
+# spaCy 3.8.7 allows typer>=0.27, whose wheels no longer depend on click, but
+# spaCy's CLI imports click. Without this pin, `import spacy` fails in a clean
+# environment (verified 2026-10-12).
+typer==0.24.0

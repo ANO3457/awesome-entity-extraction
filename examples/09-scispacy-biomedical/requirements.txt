@@ -1,2 +1,8 @@
-scispacy==0.5.4
+# scispacy 0.5.4 required scipy<1.11, which cannot build on Python 3.12.
+# 0.5.5 lifts that cap; upstream still publishes the 0.5.4 model for it.
+scispacy==0.5.5
 spacy==3.7.5
+# thinc 8.2.x (from spaCy 3.7.5) is compiled against NumPy 1.x.
+numpy==1.26.4
+# Keeps click installed for spaCy's CLI import (see examples/01 requirements).
+typer==0.24.0
