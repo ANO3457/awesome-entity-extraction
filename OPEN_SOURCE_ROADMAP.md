@@ -93,3 +93,9 @@ contributor experience, successful example/task-card reproductions, and reader
 feedback. Track stars/forks as secondary context only. If issues receive no
 responses, ask whether the tasks are compelling and clearly scoped before
 opening more.
+
+## Longer-term scope
+
+See [SCOPE_EXPANSION_PLAN.md](SCOPE_EXPANSION_PLAN.md) for the gated plan to
+expand tasks, input types, lifecycle guides, and ecosystems, and
+[GROWTH_PLAN.md](GROWTH_PLAN.md) for the underlying strategy.
