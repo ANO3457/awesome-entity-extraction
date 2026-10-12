@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "sections": [
+    {
+      "heading": "Document and Layout Extraction",
+      "entries": [
+        {"name": "Docling", "url": "https://github.com/docling-project/docling", "kind": "library", "license": "MIT", "deployment": "local",
+         "input_types": ["text_pdf", "scanned_pdf", "image", "docx", "html", "office"], "ocr": "optional", "last_checked": "2026-10-12", "status": "active"},
+        {"name": "Marker", "url": "https://github.com/datalab-to/marker", "kind": "library", "license": "Apache-2.0", "deployment": "local",
+         "input_types": ["text_pdf", "scanned_pdf", "image", "docx", "html", "office"], "ocr": "built_in", "last_checked": "2026-10-12", "status": "active",
+         "notes": "Code is Apache-2.0; check the repository for separate model-weight terms before commercial use."},
+        {"name": "Unstructured", "url": "https://github.com/Unstructured-IO/unstructured", "kind": "library", "license": "Apache-2.0", "deployment": "both",
+         "input_types": ["text_pdf", "scanned_pdf", "image", "docx", "html", "office"], "ocr": "optional", "last_checked": "2026-10-12", "status": "active",
+         "notes": "Open-source library plus a separate hosted service."},
+        {"name": "Surya", "url": "https://github.com/datalab-to/surya", "kind": "library", "license": "Apache-2.0", "deployment": "local",
+         "input_types": ["text_pdf", "scanned_pdf", "image"], "ocr": "built_in", "last_checked": "2026-10-12", "status": "active",
+         "notes": "Code is Apache-2.0; check the repository for separate model-weight terms before commercial use."},
+        {"name": "Nougat", "url": "https://github.com/facebookresearch/nougat", "kind": "model", "license": "MIT", "deployment": "local",
+         "input_types": ["text_pdf", "scanned_pdf"], "ocr": "built_in", "last_checked": "2026-10-12", "status": "unclear",
+         "notes": "Last push 2025-02-21. Reads rendered page images; aimed at scientific papers. Code license only; check weight terms."},
+        {"name": "LayoutParser", "url": "https://github.com/Layout-Parser/layout-parser", "kind": "library", "license": "Apache-2.0", "deployment": "local",
+         "input_types": ["image", "scanned_pdf"], "ocr": "optional", "last_checked": "2026-10-12", "status": "unclear",
+         "notes": "Last push 2024-08-15."},
+        {"name": "Donut", "url": "https://github.com/clovaai/donut", "kind": "model", "license": "MIT", "deployment": "local",
+         "input_types": ["image"], "ocr": "none", "last_checked": "2026-10-12", "status": "unclear",
+         "notes": "Last push 2024-07-11. OCR-free by design: the model reads pixels directly."},
+        {"name": "Table Transformer", "url": "https://github.com/microsoft/table-transformer", "kind": "model", "license": "MIT", "deployment": "local",
+         "input_types": ["image"], "ocr": "external", "last_checked": "2026-10-12", "status": "archived",
+         "notes": "Repository archived (last push 2024-06-24). Detects table structure; cell text needs separate OCR or PDF text."},
+        {"name": "pdfplumber", "url": "https://github.com/jsvine/pdfplumber", "kind": "library", "license": "MIT", "deployment": "local",
+         "input_types": ["text_pdf"], "ocr": "none", "last_checked": "2026-10-12", "status": "active",
+         "notes": "Selectable-text PDFs only. Used by examples/06-invoice-pdf."},
+        {"name": "Camelot", "url": "https://github.com/camelot-dev/camelot", "kind": "library", "license": "MIT", "deployment": "local",
+         "input_types": ["text_pdf"], "ocr": "none", "last_checked": "2026-10-12", "status": "active"},
+        {"name": "spacy-layout", "url": "https://github.com/explosion/spacy-layout", "kind": "library", "license": "MIT", "deployment": "local",
+         "input_types": ["text_pdf", "docx"], "ocr": "optional", "last_checked": "2026-10-12", "status": "unclear",
+         "notes": "Last push 2026-03-27, just past the 180-day activity window. Parses via Docling."}
+      ]
+    }
+  ]
+}
