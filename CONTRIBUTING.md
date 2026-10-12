@@ -38,10 +38,25 @@ Before proposing an item, check that it is not already listed and that it:
 
 ## Add or improve a runnable example
 
-Examples live in independent folders under `examples/`. Each example should have
-its own `README.md`, `main.py`, and `requirements.txt`, and should work without
-installing another example's dependencies. Keep input synthetic; never commit
-personal, customer, or health data, API keys, or credentials.
+Examples live in independent folders under `examples/`, named `NN-short-slug`.
+Each example needs its own `README.md`, `main.py` (with a top-level `main()`),
+pinned `requirements.txt`, and an `example.json` metadata file that follows
+[`examples/example.schema.json`](examples/example.schema.json). It should work
+without installing another example's dependencies. Keep input synthetic; never
+commit personal, customer, or health data, API keys, or credentials.
+
+You don't need to edit any script or hand-edit the examples table. CI discovers
+new folders, and the table in `examples/README.md` is generated:
+
+```bash
+python3 scripts/check-examples.py --write   # regenerate the index after adding/editing example.json
+```
+
+**Model-origin policy:** don't add Chinese-origin models or their fine-tunes
+(Qwen, DeepSeek, GLM, Yi, Baichuan, InternLM, MiniCPM, Kimi, Hunyuan, ERNIE, and
+similar), in examples or the catalog. List a fine-tune's `base_model` in
+`example.json`. If you can't tell where a model comes from, ask in the issue
+first. CI enforces this through [`scripts/model_policy.py`](scripts/model_policy.py).
 
 An example contribution should include:
 
@@ -63,6 +78,8 @@ If you want to contribute an idea before coding, use the [example idea form](htt
 
    ```bash
    python3 scripts/check-examples.py
+   python3 scripts/check-catalog.py
+   python3 -m unittest discover -s tests
    python3 -m compileall -q examples scripts
    npx --yes awesome-lint README.md
    python3 scripts/check-links.py

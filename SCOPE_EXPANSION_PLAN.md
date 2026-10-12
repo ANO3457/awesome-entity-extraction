@@ -70,7 +70,13 @@ not all of them.
 
 Each wave has a **gate**. Don't start a wave until the previous gate passes.
 
-### Wave 0: Fix the foundation (1 week, required)
+### Wave 0: Fix the foundation (1 week, required): **done 2026-10-12**
+
+> Status: all six items shipped. Notes on what changed from the original plan:
+> catalog metadata is `catalog/entries.json` (not YAML) because CI is
+> stdlib-only; the audit removed NuExtract 2.0 (verified Qwen2.5-VL base),
+> HanLP, and PaddleNLP. scispaCy's model license is marked `unverified` until
+> someone confirms it at the source.
 
 Pay off the structural debt so that adding item N+1 costs one folder, not five
 edits.
