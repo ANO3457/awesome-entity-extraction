@@ -20,6 +20,14 @@ re-checks every link weekly.
 documents, entity linking, PII detection, and the annotation/eval tooling
 around it.
 
+**Help improve this resource:** suggest a missing tool, contribute a distinct
+standalone example, or report stale information. First-time contributors are
+welcome; no issue or permission is needed before opening a PR. [Suggest a resource](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new/choose),
+[propose an example](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new?template=example_idea.md),
+[open a PR](https://github.com/shivamnegi92/awesome-entity-extraction/compare),
+or read [CONTRIBUTING.md](CONTRIBUTING.md). Good first tasks: fix a dead link,
+add a useful missing tool, or improve an example quickstart.
+
 **Not sure where to start?** This picks a tool from your constraints:
 
 ![Which tool should I pick? A decision flowchart](assets/decision.gif)
@@ -261,12 +269,6 @@ NER, temporal/quantity parsing, biomedical entities, and entity linking. Each
 example has its own setup guide and dependencies.
 
 See the [examples index](examples/README.md) to choose a use case and run it.
-
-## Contributing
-
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
-The one hard rule: **every entry must link to a real, maintained project** and
-include a short, factual description. No dead links, no vaporware.
 
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](LICENSE)
 

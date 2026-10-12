@@ -1,14 +1,15 @@
-## What are you adding?
+## What changed and why?
 
-<!-- One line per entry, e.g. - [Name](https://link) - What it does. -->
+<!-- Summarize the change and who it helps. For resources, explain relevance. One line per resource entry. -->
 
-## Checklist
+## Checks
 
-- [ ] The link is live and the project is maintained
-- [ ] Description is one factual line (what it does, not marketing)
-- [ ] Placed under the most relevant section
-- [ ] I ran `python3 scripts/check-links.py` (or trust CI to)
+- [ ] `python3 scripts/check-examples.py` (if examples changed)
+- [ ] `python3 -m compileall -q examples scripts` (if Python changed)
+- [ ] `npx --yes awesome-lint README.md` (if README changed)
+- [ ] Links checked with `python3 scripts/check-links.py`, or explain why not
+- [ ] Docs/index updated and no secrets or private data included
 
-## Why does it belong here?
+## Evidence / limitations
 
-<!-- A sentence or two. -->
+<!-- Link to the canonical resource or state what could not be tested (e.g., model download, API key, paid service). -->

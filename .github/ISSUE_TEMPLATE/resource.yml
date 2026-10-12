@@ -1,0 +1,41 @@
+name: Suggest a resource or report an issue
+description: Propose a useful catalog entry or help fix stale information.
+title: "[Resource]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the catalog. Please check [CONTRIBUTING.md](https://github.com/shivamnegi92/awesome-entity-extraction/blob/main/CONTRIBUTING.md) first. Direct pull requests are welcome too.
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: What would you like to do?
+      options:
+        - Suggest a tool, model, dataset, or learning resource
+        - Report a dead link or outdated description
+        - Suggest a correction or improvement
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Canonical URL
+      description: Link to the project, model, dataset, or affected item (if applicable).
+      placeholder: https://github.com/owner/project
+    validations:
+      required: false
+  - type: textarea
+    id: use_case
+    attributes:
+      label: What does it help someone do?
+      description: Describe the concrete extraction use case and why it belongs in this catalog.
+      placeholder: It extracts ... from ... and is useful when ...
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and maintenance
+      description: Share docs, release/activity evidence, or a reproducible example.
+    validations:
+      required: false
