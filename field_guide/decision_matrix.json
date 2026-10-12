@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "method": "Editorial shortlist from catalog capabilities and repository examples; not a benchmark ranking.",
+  "version": "1.1.0",
+  "method": "Editorial shortlist from catalog capabilities and repository examples; not a benchmark ranking. Paths are relative to the repository root. Single source for the chooser; do not duplicate elsewhere.",
   "scenarios": [
     {
       "id": "common-english-ner",
@@ -11,7 +11,8 @@
       "alternatives": ["GLiNER when caller-defined types are needed"],
       "disqualifiers": ["Must recognize arbitrary domain labels without training or prompt-defined inference"],
       "unknowns": ["Real-domain recall depends on corpus and model version"],
-      "example": "examples/01-spacy-ner/README.md"
+      "example": "examples/01-spacy-ner/README.md",
+      "task_card": "field_guide/tasks/custom-ner/README.md"
     },
     {
       "id": "custom-label-ner",
@@ -22,7 +23,8 @@
       "alternatives": ["Instructor for fixed structured fields with hosted API", "Fine-tuned token classifier for stable schema and labeled data"],
       "disqualifiers": ["No model download allowed", "Scores must be calibrated probabilities"],
       "unknowns": ["Task accuracy, memory, and latency need measurement on target hardware"],
-      "example": "examples/02-gliner-zero-shot/README.md"
+      "example": "examples/02-gliner-zero-shot/README.md",
+      "task_card": "field_guide/tasks/custom-ner/README.md"
     },
     {
       "id": "local-pii-redaction",
@@ -33,7 +35,8 @@
       "alternatives": ["Rule recognizers for known identifier formats", "Domain-specific local NER if evaluated for the target text"],
       "disqualifiers": ["Requires a guarantee that no PII can remain"],
       "unknowns": ["Recall and false-redaction rates on representative, approved test data"],
-      "example": "examples/04-presidio-pii/README.md"
+      "example": "examples/04-presidio-pii/README.md",
+      "task_card": "field_guide/tasks/pii-redaction/README.md"
     },
     {
       "id": "messy-text-fixed-schema",
@@ -44,7 +47,8 @@
       "alternatives": ["Local constrained-generation model if data locality requires it", "Rules for stable, strongly formatted text"],
       "disqualifiers": ["Cannot send the input to an external service", "Cannot hold API credentials"],
       "unknowns": ["Factual extraction quality, provider data handling, and per-run cost"],
-      "example": "examples/03-instructor-structured/README.md"
+      "example": "examples/03-instructor-structured/README.md",
+      "task_card": null
     },
     {
       "id": "known-layout-text-pdf",
@@ -55,7 +59,8 @@
       "alternatives": ["Docling or another catalogued document parser for varied structures"],
       "disqualifiers": ["PDF is image-only or layout varies substantially"],
       "unknowns": ["Generalization across vendors, scans, tables, and rotations"],
-      "example": "examples/06-invoice-pdf/README.md"
+      "example": "examples/06-invoice-pdf/README.md",
+      "task_card": null
     },
     {
       "id": "scanned-layout-heavy-documents",
@@ -66,7 +71,8 @@
       "alternatives": ["Cloud document extraction service where policy permits"],
       "disqualifiers": ["No OCR or model downloads permitted without an approved cloud alternative"],
       "unknowns": ["Language/layout accuracy, compute, license, and table fidelity for the specific corpus"],
-      "example": "../README.md#-document-and-layout-extraction"
+      "example": "README.md#-document-and-layout-extraction",
+      "task_card": null
     }
   ]
 }

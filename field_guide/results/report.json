@@ -1,16 +1,18 @@
 {
-  "guide_version": "0.1.0",
+  "guide_version": "0.2.0",
   "status": "draft",
   "notice": "Tiny synthetic tasks. No results are inferred or run by report generation.",
   "tasks": [
     {
       "id": "custom-ner",
+      "metric": "spans",
       "fixture_version": "1.0.0",
       "runs": [],
       "status": "not_run"
     },
     {
       "id": "pii-redaction",
+      "metric": "pii_residual",
       "fixture_version": "1.0.0",
       "runs": [],
       "status": "not_run"

@@ -7,9 +7,11 @@ prototype, and a tiny fixture cannot estimate production accuracy.
 
 ## Choose a starting point
 
-The maintained machine-readable version is [`decision_matrix.json`](decision_matrix.json).
-This table is its quick human-readable summary; confirm model, API, license, and
-system requirements at the linked source before adoption.
+The maintained machine-readable version is [`decision_matrix.json`](decision_matrix.json),
+the **only** place scenarios are defined (CI rejects a second copy). Paths in it are
+relative to the repository root and are checked to exist. This table is its quick
+human-readable summary; confirm model, API, license, and system requirements at the
+linked source before adoption.
 
 | Your task / constraint | Start by trying | Important caveat | Example |
 |---|---|---|---|
@@ -65,9 +67,19 @@ python3 scripts/run_field_guide.py score custom-ner path/to/predictions.json
 python3 scripts/run_field_guide.py score pii-redaction path/to/redacted-outputs.json
 ```
 
-Prediction schemas are shown by `field_guide/evaluate.py` and enforced by the
+Prediction schemas are shown by each task's `prediction.schema.json` and enforced by the
 offline tests. Candidate outputs must include exactly one result per fixture
 case; missing cases are errors, not silently excluded from metrics.
+
+## Adding a task card
+
+Task cards are discovered from `tasks/<id>/fixture.json`; no script edits needed.
+A card needs `README.md`, `fixture.json`, `annotation.md`, and
+`prediction.schema.json`. The fixture's `"metric"` key picks a scorer from
+[`metrics/`](metrics/__init__.py) (`spans` or `pii_residual` today). A new kind of
+task (for example, table cells or entity-resolution pairs) adds one metric module
+with `validate_fixture`, `validate_predictions`, and `score`, plus one line in
+`METRICS`. Existing metrics don't change.
 
 ## Current run status
 
