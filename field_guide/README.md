@@ -1,9 +1,9 @@
 # Entity Extraction Field Guide (prototype)
 
 A small decision-and-evidence companion to the catalog. It helps narrow a
-starting approach and defines two versioned, synthetic task cards. It is **not**
-a benchmark leaderboard: no model outputs have been run or scored in the checked-in
-prototype, and a tiny fixture cannot estimate production accuracy.
+starting approach and defines two versioned, synthetic task cards, each with one
+recorded, reproducible run. It is **not** a benchmark leaderboard: a six-case
+fixture describes behaviour and cannot estimate production accuracy.
 
 ## Choose a starting point
 
@@ -37,9 +37,10 @@ or direct PR. Never submit real user text or personal, customer, or health data.
 
 
 - [Custom-label NER on short text](tasks/custom-ner/README.md) — fixture,
-  annotation policy, strict/overlap span-type metrics, and explicit not-run status.
+  annotation policy, strict/overlap span-type metrics, and a recorded spaCy run.
 - [Synthetic PII redaction](tasks/pii-redaction/README.md) — exact-string
-  residual checks and safety caveats; not a privacy certification.
+  residual checks, safety caveats, and a recorded Presidio run; not a privacy
+  certification.
 
 Fixtures and annotation rules are versioned independently. Please propose a
 new task or correction using the [example idea form](https://github.com/shivamnegi92/awesome-entity-extraction/issues/new?template=example_idea.md).
@@ -83,7 +84,12 @@ with `validate_fixture`, `validate_predictions`, and `score`, plus one line in
 
 ## Current run status
 
-**No model/provider outputs are published yet.** The fixtures, schemas, checks,
-and evaluator are implemented; they are not evidence that any extractor passed.
-The next step is to run a small, declared candidate set in isolated environments,
-record manifests/raw outputs, and get independent review before publishing scores.
+| Task card | Recorded run | Headline | Write-up |
+|---|---|---|---|
+| custom-ner | spaCy 3.8.7 + `en_core_web_sm` 3.8.0 | Strict F1 0.636; boundaries all right, 4 type errors | [NOTES](results/custom-ner/spacy-3.8.7-en_core_web_sm-3.8.0/NOTES.md) |
+| custom-ner | GLiNER multi v2.1 | **not run** (weights download blocked on the recording network) | issue #9 |
+| pii-redaction | Presidio 2.2.358 defaults + `en_core_web_lg` 3.8.0 | 3 of 6 sensitive values left; `.test` emails rejected by TLD validation | [NOTES](results/pii-redaction/presidio-2.2.358-en_core_web_lg-3.8.0/NOTES.md) |
+
+Runs were recorded by the maintainers and haven't been independently reproduced
+yet. That reproduction is the most useful next contribution: see
+[`adapters/README.md`](adapters/README.md) for exact commands and model checksums.

@@ -17,8 +17,9 @@ documents. Includes ten isolated examples and an evidence-aware chooser.
 
 **Start with a task:** use the Quick Start below, browse the catalog, or open the
 standalone example index. Recommendations are starting points—not endorsements
-or universal rankings. The Field Guide task cards are synthetic and currently
-**not run**; this repository does not claim benchmark results.
+or universal rankings. The Field Guide's two synthetic task cards each have one
+recorded, reproducible run with its misses written up; six-case fixtures
+describe behaviour, and this repository makes no benchmark claims.
 
 **Quick Start: choose by constraint**
 
@@ -274,7 +275,8 @@ See the [examples index](examples/README.md) to choose a use case and run it.
 Need a shortlist rather than another taxonomy? Read the [Field Guide](field_guide/README.md)
 for task/constraint recommendations, two synthetic task cards, and clear run-status
 caveats. The [static chooser](field_guide/site/index.html) needs no backend. The
-task cards are currently `not_run`; no model scores are claimed.
+task cards have one recorded run each (spaCy on custom NER, Presidio on PII),
+with per-case misses. They are tiny synthetic fixtures, not benchmarks.
 
 ## Contribute
 
