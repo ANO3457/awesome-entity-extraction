@@ -1,0 +1,53 @@
+{
+  "run": {
+    "tool": "presidio",
+    "version": "2.2.358",
+    "model": "en_core_web_lg==3.8.0 (spaCy 3.8.7)",
+    "fixture_version": "1.0.0",
+    "run_date_utc": "2026-10-12T16:20:47+00:00",
+    "environment": "Darwin arm64; Python 3.12.11; CPU",
+    "command": "python field_guide/adapters/presidio_pii.py --out field_guide/results/pii-redaction/presidio-2.2.358-en_core_web_lg-3.8.0",
+    "git_commit": "cb9f2aa",
+    "status": "passed",
+    "network_or_api": false,
+    "notes": "status=passed means the adapter produced output for every case; it is not a quality verdict. Presidio defaults: AnalyzerEngine() built-in English recognizers, AnonymizerEngine() replace-with-type; no thresholds or custom recognizers. Model weights installed beforehand; inference ran offline."
+  },
+  "examples": [
+    {
+      "id": "contact-001",
+      "redacted_text": "<PERSON> at <URL>e@example.test or call <PHONE_NUMBER>.",
+      "detected_types": [
+        "PERSON",
+        "PHONE_NUMBER",
+        "URL"
+      ]
+    },
+    {
+      "id": "unicode-002",
+      "redacted_text": "Contact Zoë Example: zoe@example.test.",
+      "detected_types": []
+    },
+    {
+      "id": "repeat-003",
+      "redacted_text": "Write to repeat@example.test; again, repeat@example.test.",
+      "detected_types": []
+    },
+    {
+      "id": "digits-negative-004",
+      "redacted_text": "The package has 14 items and weighs 500 grams.",
+      "detected_types": []
+    },
+    {
+      "id": "ambiguous-005",
+      "redacted_text": "Please call me after lunch; my local extension is 2048.",
+      "detected_types": []
+    },
+    {
+      "id": "empty-006",
+      "redacted_text": "The delivery arrived <DATE_TIME>.",
+      "detected_types": [
+        "DATE_TIME"
+      ]
+    }
+  ]
+}

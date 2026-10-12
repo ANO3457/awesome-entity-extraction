@@ -76,9 +76,23 @@ class FieldGuideTests(unittest.TestCase):
         self.assertIn("https://github.com/shivamnegi92/awesome-entity-extraction", page)
         self.assertIn("blob/main/examples/01-spacy-ner/README.md", page)
 
-    def test_no_recorded_runs_are_not_run(self):
+    def test_task_without_recorded_runs_is_not_run(self):
+        import tempfile
+        from unittest import mock
+        from field_guide import evaluate
+        with tempfile.TemporaryDirectory() as empty, mock.patch.object(evaluate, "RESULTS", Path(empty)):
+            report = build_report()
+        self.assertTrue(report["tasks"])
+        self.assertTrue(all(task.get("status") == "not_run" and task["runs"] == []
+                            for task in report["tasks"]))
+
+    def test_checked_in_runs_validate_and_are_never_reported_as_not_run(self):
         report = build_report()
-        self.assertTrue(all(task.get("status") == "not_run" for task in report["tasks"]))
+        for task in report["tasks"]:
+            for run in task["runs"]:
+                self.assertNotEqual(run["status"], "failed", run.get("errors"))
+            if task["runs"]:
+                self.assertNotIn("status", task)
 
 
 if __name__ == "__main__":

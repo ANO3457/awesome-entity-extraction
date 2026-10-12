@@ -1,0 +1,111 @@
+{
+  "run": {
+    "tool": "spacy",
+    "version": "3.8.7",
+    "model": "en_core_web_sm==3.8.0",
+    "fixture_version": "1.0.0",
+    "run_date_utc": "2026-10-12T16:20:45+00:00",
+    "environment": "Darwin arm64; Python 3.12.11; CPU",
+    "command": "python field_guide/adapters/spacy_custom_ner.py --out field_guide/results/custom-ner/spacy-3.8.7-en_core_web_sm-3.8.0",
+    "git_commit": "cb9f2aa",
+    "status": "passed",
+    "network_or_api": false,
+    "notes": "status=passed means the adapter produced output for every case; it is not a quality verdict. Label policy: identity on fixture labels ['GPE', 'ORG', 'PERSON', 'PRODUCT']; 2 prediction(s) with other labels dropped from scoring and kept in raw_predictions.json. Model weights installed beforehand; inference ran offline."
+  },
+  "examples": [
+    {
+      "id": "news-001",
+      "entities": [
+        {
+          "text": "Maya Chen",
+          "label": "PERSON",
+          "start": 0,
+          "end": 9
+        },
+        {
+          "text": "Northstar Labs",
+          "label": "PERSON",
+          "start": 17,
+          "end": 31
+        },
+        {
+          "text": "Toronto",
+          "label": "GPE",
+          "start": 35,
+          "end": 42
+        }
+      ]
+    },
+    {
+      "id": "product-002",
+      "entities": [
+        {
+          "text": "Aster Phone 4",
+          "label": "PERSON",
+          "start": 0,
+          "end": 13
+        },
+        {
+          "text": "Dublin",
+          "label": "GPE",
+          "start": 26,
+          "end": 32
+        }
+      ]
+    },
+    {
+      "id": "negative-003",
+      "entities": []
+    },
+    {
+      "id": "unicode-004",
+      "entities": [
+        {
+          "text": "Zoë",
+          "label": "PERSON",
+          "start": 0,
+          "end": 3
+        },
+        {
+          "text": "Café North",
+          "label": "PERSON",
+          "start": 11,
+          "end": 21
+        },
+        {
+          "text": "Montréal",
+          "label": "GPE",
+          "start": 25,
+          "end": 33
+        }
+      ]
+    },
+    {
+      "id": "abbrev-005",
+      "entities": [
+        {
+          "text": "J. Rivera",
+          "label": "ORG",
+          "start": 0,
+          "end": 9
+        },
+        {
+          "text": "U.N. House",
+          "label": "ORG",
+          "start": 19,
+          "end": 29
+        },
+        {
+          "text": "Geneva",
+          "label": "GPE",
+          "start": 33,
+          "end": 39
+        }
+      ]
+    },
+    {
+      "id": "empty-006",
+      "entities": []
+    }
+  ]
+}

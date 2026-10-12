@@ -7,15 +7,233 @@
       "id": "custom-ner",
       "metric": "spans",
       "fixture_version": "1.0.0",
-      "runs": [],
-      "status": "not_run"
+      "runs": [
+        {
+          "status": "passed",
+          "path": "field_guide/results/custom-ner/spacy-3.8.7-en_core_web_sm-3.8.0",
+          "manifest": {
+            "tool": "spacy",
+            "version": "3.8.7",
+            "model": "en_core_web_sm==3.8.0",
+            "fixture_version": "1.0.0",
+            "run_date_utc": "2026-10-12T16:20:45+00:00",
+            "environment": "Darwin arm64; Python 3.12.11; CPU",
+            "command": "python field_guide/adapters/spacy_custom_ner.py --out field_guide/results/custom-ner/spacy-3.8.7-en_core_web_sm-3.8.0",
+            "git_commit": "cb9f2aa",
+            "status": "passed",
+            "network_or_api": false,
+            "notes": "status=passed means the adapter produced output for every case; it is not a quality verdict. Label policy: identity on fixture labels ['GPE', 'ORG', 'PERSON', 'PRODUCT']; 2 prediction(s) with other labels dropped from scoring and kept in raw_predictions.json. Model weights installed beforehand; inference ran offline."
+          },
+          "scores": {
+            "metric_note": "Span-level scores on a tiny synthetic fixture; not a real-world accuracy estimate.",
+            "strict_span_type": {
+              "tp": 7,
+              "fp": 4,
+              "fn": 4,
+              "precision": 0.6363636363636364,
+              "recall": 0.6363636363636364,
+              "f1": 0.6363636363636364
+            },
+            "overlap_span_type": {
+              "tp": 7,
+              "fp": 4,
+              "fn": 4,
+              "precision": 0.6363636363636364,
+              "recall": 0.6363636363636364,
+              "f1": 0.6363636363636364
+            },
+            "cases": [
+              {
+                "id": "news-001",
+                "gold_count": 3,
+                "prediction_count": 3,
+                "strict_tp": 2,
+                "strict_fp": 1,
+                "strict_fn": 1,
+                "unmatched_gold": [
+                  [
+                    17,
+                    31,
+                    "ORG"
+                  ]
+                ],
+                "unmatched_predictions": [
+                  [
+                    17,
+                    31,
+                    "PERSON"
+                  ]
+                ]
+              },
+              {
+                "id": "product-002",
+                "gold_count": 2,
+                "prediction_count": 2,
+                "strict_tp": 1,
+                "strict_fp": 1,
+                "strict_fn": 1,
+                "unmatched_gold": [
+                  [
+                    0,
+                    13,
+                    "PRODUCT"
+                  ]
+                ],
+                "unmatched_predictions": [
+                  [
+                    0,
+                    13,
+                    "PERSON"
+                  ]
+                ]
+              },
+              {
+                "id": "negative-003",
+                "gold_count": 0,
+                "prediction_count": 0,
+                "strict_tp": 0,
+                "strict_fp": 0,
+                "strict_fn": 0,
+                "unmatched_gold": [],
+                "unmatched_predictions": []
+              },
+              {
+                "id": "unicode-004",
+                "gold_count": 3,
+                "prediction_count": 3,
+                "strict_tp": 2,
+                "strict_fp": 1,
+                "strict_fn": 1,
+                "unmatched_gold": [
+                  [
+                    11,
+                    21,
+                    "ORG"
+                  ]
+                ],
+                "unmatched_predictions": [
+                  [
+                    11,
+                    21,
+                    "PERSON"
+                  ]
+                ]
+              },
+              {
+                "id": "abbrev-005",
+                "gold_count": 3,
+                "prediction_count": 3,
+                "strict_tp": 2,
+                "strict_fp": 1,
+                "strict_fn": 1,
+                "unmatched_gold": [
+                  [
+                    0,
+                    9,
+                    "PERSON"
+                  ]
+                ],
+                "unmatched_predictions": [
+                  [
+                    0,
+                    9,
+                    "ORG"
+                  ]
+                ]
+              },
+              {
+                "id": "empty-006",
+                "gold_count": 0,
+                "prediction_count": 0,
+                "strict_tp": 0,
+                "strict_fp": 0,
+                "strict_fn": 0,
+                "unmatched_gold": [],
+                "unmatched_predictions": []
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "pii-redaction",
       "metric": "pii_residual",
       "fixture_version": "1.0.0",
-      "runs": [],
-      "status": "not_run"
+      "runs": [
+        {
+          "status": "passed",
+          "path": "field_guide/results/pii-redaction/presidio-2.2.358-en_core_web_lg-3.8.0",
+          "manifest": {
+            "tool": "presidio",
+            "version": "2.2.358",
+            "model": "en_core_web_lg==3.8.0 (spaCy 3.8.7)",
+            "fixture_version": "1.0.0",
+            "run_date_utc": "2026-10-12T16:20:47+00:00",
+            "environment": "Darwin arm64; Python 3.12.11; CPU",
+            "command": "python field_guide/adapters/presidio_pii.py --out field_guide/results/pii-redaction/presidio-2.2.358-en_core_web_lg-3.8.0",
+            "git_commit": "cb9f2aa",
+            "status": "passed",
+            "network_or_api": false,
+            "notes": "status=passed means the adapter produced output for every case; it is not a quality verdict. Presidio defaults: AnalyzerEngine() built-in English recognizers, AnonymizerEngine() replace-with-type; no thresholds or custom recognizers. Model weights installed beforehand; inference ran offline."
+          },
+          "scores": {
+            "metric_note": "Exact fixture-string residuals only; not comprehensive PII recall, safety, or compliance.",
+            "sensitive_values_expected": 6,
+            "sensitive_values_remaining": 3,
+            "residual_rate": 0.5,
+            "cases": [
+              {
+                "id": "contact-001",
+                "sensitive_value_count": 3,
+                "residual_values": [],
+                "expected_type_coverage": [
+                  "PERSON",
+                  "PHONE_NUMBER",
+                  "URL"
+                ]
+              },
+              {
+                "id": "unicode-002",
+                "sensitive_value_count": 2,
+                "residual_values": [
+                  "Zo\u00eb Example",
+                  "zoe@example.test"
+                ],
+                "expected_type_coverage": []
+              },
+              {
+                "id": "repeat-003",
+                "sensitive_value_count": 1,
+                "residual_values": [
+                  "repeat@example.test"
+                ],
+                "expected_type_coverage": []
+              },
+              {
+                "id": "digits-negative-004",
+                "sensitive_value_count": 0,
+                "residual_values": [],
+                "expected_type_coverage": []
+              },
+              {
+                "id": "ambiguous-005",
+                "sensitive_value_count": 0,
+                "residual_values": [],
+                "expected_type_coverage": []
+              },
+              {
+                "id": "empty-006",
+                "sensitive_value_count": 0,
+                "residual_values": [],
+                "expected_type_coverage": [
+                  "DATE_TIME"
+                ]
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

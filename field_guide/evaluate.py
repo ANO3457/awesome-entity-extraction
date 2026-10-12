@@ -101,12 +101,13 @@ def build_report() -> dict[str, Any]:
         for predictions_path in recorded_runs(task_id):
             predictions = load_json(predictions_path)
             run = predictions.get("run", {})
+            folder = predictions_path.parent.relative_to(ROOT.parent).as_posix()
             errors = validate_run(task_id, predictions, fixture)
             if errors:
-                task["runs"].append({"status": "failed", "tool": run.get("tool"),
+                task["runs"].append({"status": "failed", "path": folder, "tool": run.get("tool"),
                                      "version": run.get("version"), "errors": errors})
                 continue
-            task["runs"].append({"status": run["status"], "manifest": run,
+            task["runs"].append({"status": run["status"], "path": folder, "manifest": run,
                                  "scores": score_task(task_id, fixture, predictions)})
         if not task["runs"]:
             task["status"] = "not_run"

@@ -60,6 +60,22 @@ def _row(scenario: dict) -> str:
             + f"<td>{' · '.join(links)}</td></tr>")
 
 
+def _run_links(task: dict) -> str:
+    """Link each recorded run's NOTES.md (or its predictions) so status is never bare."""
+    links = []
+    for run in task["runs"]:
+        manifest = run.get("manifest", {})
+        label = f"{manifest.get('tool', run.get('tool'))} {manifest.get('model') or ''}".strip()
+        folder = run.get("path")
+        if folder:
+            target = f"{folder}/NOTES.md" if (ROOT / folder / "NOTES.md").is_file() else f"{folder}/predictions.json"
+            label = f'<a href="{html.escape(repo_link(target), quote=True)}">{html.escape(label)}</a>'
+        else:
+            label = html.escape(label)
+        links.append(f"{label} ({html.escape(run['status'])})")
+    return "; recorded runs: " + ", ".join(links) if links else ""
+
+
 def _task_list(report: dict) -> str:
     items = []
     for task in report["tasks"]:
@@ -68,7 +84,8 @@ def _task_list(report: dict) -> str:
         items.append(
             f'<li><a href="{html.escape(repo_link(f"field_guide/tasks/{task["id"]}/README.md"), quote=True)}">'
             f'{html.escape(task["id"])}</a>: {len(fixture["examples"])} synthetic cases; '
-            f'metric <code>{html.escape(task["metric"])}</code>; status <strong>{html.escape(status)}</strong>.</li>'
+            f'metric <code>{html.escape(task["metric"])}</code>; status <strong>{html.escape(status)}</strong>'
+            f'{_run_links(task)}.</li>'
         )
     return "".join(items)
 
@@ -87,7 +104,7 @@ def render_site() -> int:
 <p><a href="{REPO_URL}">Back to Awesome Entity Extraction repository</a></p>
 <h1>Choose an entity extraction approach</h1>
 <p>Use the task and constraints to find a starting point. These are editorial recommendations from catalog capabilities, not benchmark winners.</p>
-<p class="notice"><strong>Status: prototype, not a benchmark.</strong> Task-card results: {html.escape(task_status)}. No model outputs are claimed as passed. Confirm privacy, licensing, model availability, and performance for your environment.</p>
+<p class="notice"><strong>Status: prototype, not a benchmark.</strong> Task-card results: {html.escape(task_status)}. Recorded runs use six-case synthetic fixtures and haven't been independently reproduced; each run's write-up lists its misses. Confirm privacy, licensing, model availability, and performance for your environment.</p>
 <div class="scroll"><table><caption>Task-to-approach shortlist and caveats</caption><thead><tr><th scope="col">Task</th><th scope="col">Start with</th><th scope="col">Why</th><th scope="col">Alternatives</th><th scope="col">Disqualifiers / unknowns</th><th scope="col">Links</th></tr></thead><tbody>{rows}</tbody></table></div>
 <h2>Task cards</h2>
 <ul>{_task_list(report)}</ul>
