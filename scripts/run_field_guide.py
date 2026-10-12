@@ -44,7 +44,7 @@ def render_site() -> int:
         alternatives = ", ".join(scenario["alternatives"])
         watch = "; ".join(scenario["disqualifiers"] + scenario["unknowns"])
         link = scenario["example"]
-        href = ("../../" + link) if not link.startswith("../README") else "../../README.md#-document-and-layout-extraction"
+        href = "https://github.com/shivamnegi92/awesome-entity-extraction/blob/main/" + link.replace("../", "")
         cards.append(
             "<tr><th scope=\"row\">" + html.escape(scenario["task"]) + "</th>"
             "<td>" + html.escape(start) + "</td>"
@@ -61,7 +61,7 @@ def render_site() -> int:
 <style>
 :root{{color-scheme:light dark;font:16px/1.55 system-ui,sans-serif}}body{{max-width:1200px;margin:auto;padding:1rem}}h1{{line-height:1.2}}.notice{{border-left:.3rem solid #b45309;padding:.75rem 1rem;background:color-mix(in srgb,#f59e0b 12%,transparent)}}.scroll{{overflow-x:auto}}table{{border-collapse:collapse;width:100%;min-width:850px}}th,td{{border:1px solid #888;padding:.65rem;text-align:left;vertical-align:top}}th{{background:color-mix(in srgb,#777 18%,transparent)}}a{{text-underline-offset:.2em}}:focus-visible{{outline:3px solid #2563eb;outline-offset:3px}}small{{color:CanvasText}}
 </style></head><body>
-<p><a href="../../README.md">Back to Awesome Entity Extraction</a></p>
+<p><a href="https://github.com/shivamnegi92/awesome-entity-extraction">Back to Awesome Entity Extraction repository</a></p>
 <h1>Choose an entity extraction approach</h1>
 <p>Use the task and constraints to find a starting point. These are editorial recommendations from catalog capabilities, not benchmark winners.</p>
 <p class="notice"><strong>Status: prototype, not a benchmark.</strong> Task-card results: {html.escape(task_status)}. No model outputs are claimed as passed. Confirm privacy, licensing, model availability, and performance for your environment.</p>

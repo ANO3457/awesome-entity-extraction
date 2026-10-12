@@ -1,5 +1,6 @@
 """Offline tests for field-guide fixtures and scoring semantics."""
 import json
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -65,6 +66,15 @@ class FieldGuideTests(unittest.TestCase):
                                "network_or_api": False}, "examples": []}
         errors = validate_run("custom-ner", predictions, self.ner)
         self.assertIn("predictions must include exactly one result for every fixture case", errors)
+
+    def test_generated_chooser_links_to_project_repo_not_account_root(self):
+        script = ROOT / "scripts/run_field_guide.py"
+        subprocess.run([sys.executable, str(script), "build"], check=True, cwd=ROOT,
+                       capture_output=True, text=True)
+        page = (ROOT / "field_guide/site/index.html").read_text()
+        self.assertNotIn('href="../../README.md"', page)
+        self.assertIn("https://github.com/shivamnegi92/awesome-entity-extraction", page)
+        self.assertIn("blob/main/examples/01-spacy-ner/README.md", page)
 
     def test_no_recorded_runs_are_not_run(self):
         report = build_report()
