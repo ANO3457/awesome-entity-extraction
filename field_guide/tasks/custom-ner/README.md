@@ -44,9 +44,14 @@ status. The report builder validates and scores it; it never runs inference.
 
 ## Run status
 
-Candidate results are **not run yet** in this checked-in version. Missing results must
-show as `not_run`, not zero and not a pass. To add results, run the adapter,
-record the manifest, and review output before publishing.
+| Run | Strict F1 | Notes |
+|---|---|---|
+| [spaCy 3.8.7, `en_core_web_sm` 3.8.0](../../results/custom-ner/spacy-3.8.7-en_core_web_sm-3.8.0/NOTES.md) | 0.636 | Every boundary right; all 4 errors are types. Unseen company and product names became `PERSON`, and `PRODUCT` was never used. |
+| GLiNER `urchade/gliner_multi-v2.1` | not run | Weights download blocked on the recording network; open in issue #9. |
+
+Six sentences describe behaviour; they don't estimate accuracy. A candidate with
+no recorded run shows as `not_run`, never as zero or a pass. Add runs with an
+adapter in [`field_guide/adapters/`](../../adapters/README.md).
 
 ## Reproduce
 

@@ -39,8 +39,14 @@ tool/model version, fixture version, UTC date, environment, and status.
 - **False-redaction review:** inspect the digit-only negative and no-PII case.
   A redacted output can be safe from one exact string and still be unusable.
 
-No candidate run is included yet; results must say `not_run` until an actual
-manifest and output are recorded.
+## Recorded runs
+
+| Run | Residual values | Notes |
+|---|---|---|
+| [Presidio 2.2.358 defaults, `en_core_web_lg` 3.8.0](../../results/pii-redaction/presidio-2.2.358-en_core_web_lg-3.8.0/NOTES.md) | 3 of 6 | Missed `.test` emails because of TLD validation (checked: the same text with `.com` is detected). One email partially leaked through a `URL` hit. One false `DATE_TIME` redaction. |
+
+Record new runs with an adapter in [`field_guide/adapters/`](../../adapters/README.md).
+A task with no recorded run must show as `not_run`, never as zero or a pass.
 
 ## Reproduce and safety
 

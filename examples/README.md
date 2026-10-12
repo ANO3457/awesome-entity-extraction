@@ -24,9 +24,10 @@ These are small teaching demos, not production-ready extractors.
 <!-- END GENERATED EXAMPLES INDEX -->
 
 See the [Extraction Field Guide](../field_guide/README.md) for a constraint-based
-shortlist and two versioned, synthetic task cards. Its current task-card status
-is explicitly `not_run`; it does not publish model scores until outputs are
-reproducibly recorded.
+shortlist and two versioned, synthetic task cards. Examples 01 and 04 each have
+a recorded Field Guide run, with written-up misses, under
+[`field_guide/results/`](../field_guide/results/). Tiny fixtures describe
+behaviour; they are not benchmarks.
 
 Want to help make the examples better? Pick a [good first issue](https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue), propose a [new task card](https://github.com/shivamnegi92/awesome-entity-extraction/issues?q=is%3Aissue+is%3Aopen+label%3Atask-card), or improve one of these examples. A starter PR does not need a prior issue.
 
