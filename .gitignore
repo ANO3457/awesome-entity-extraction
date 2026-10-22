@@ -1,4 +1,7 @@
 __pycache__/
 *.pyc
+temp_auto_push.bat
 .DS_Store
 .venv/
+.gitignore
+branch_structure.json
